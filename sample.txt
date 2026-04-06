@@ -1,0 +1,64 @@
+===== SAMPLE 1: Basic Print =====
+bolo("Hello World")
+
+
+===== SAMPLE 2: If-Else =====
+x = 10
+agar x > 5:
+    bolo("Bada hai")
+warna:
+    bolo("Chhota hai")
+
+
+===== SAMPLE 3: While Loop =====
+x = 3
+jabtak x > 0:
+    bolo(x)
+    x = x - 1
+
+
+===== SAMPLE 4: User Input =====
+naam = input("Naam likho: ")
+bolo("Hello " + naam)
+
+
+===== SAMPLE 5: Mixed Example =====
+bolo("Start")
+
+x = 5
+
+agar x > 3:
+    bolo("Valid")
+warna:
+    bolo("Invalid")
+
+jabtak x > 0:
+    bolo(x)
+    x = x - 1
+
+
+===== SAMPLE 6: Error Case (Missing Quotes) =====
+likho(hello)
+
+
+===== SAMPLE 7: Error Case (Wrong Syntax) =====
+agar x > 5 hai toh
+    bolo("Yes")
+
+
+
+===== SAMPLE 8: Error Case (Wrong Syntax) =====
+
+bolo("Start")
+
+naam = input("Naam:")
+x = 3
+
+agar x = 2:
+bolo(Valid)
+
+jabtak x > 0:
+    bolo(x)
+    x = x - 1
+
+bolo("Hello " + naam)

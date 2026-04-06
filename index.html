@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hinglish Compiler</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: radial-gradient(circle at top, #2b1055, #0f2027);
+            color: white;
+        }
+
+        .container {
+            display: flex;
+            height: 100vh;
+        }
+
+        /* LEFT SIDE */
+        .left {
+            width: 60%;
+            padding: 40px;
+        }
+
+        .title {
+            font-size: 32px;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            color: #aaa;
+            margin-bottom: 20px;
+        }
+
+        textarea {
+            width: 100%;
+            min-height: 150px;
+            max-height: 500px;
+            background: #111;
+            color: #0f0;
+            border: none;
+            border-radius: 12px;
+            padding: 15px;
+            font-family: monospace;
+            font-size: 14px;
+            box-shadow: inset 0 0 10px rgba(0,255,0,0.2);
+            resize: none;       /* manual resize off */
+            overflow: hidden;   /* scrollbar remove */
+        }
+
+        textarea:focus {
+            outline: none;
+            box-shadow: 0 0 15px #00ffcc;
+        }
+
+        .btn {
+            margin-top: 20px;
+            padding: 12px 25px;
+            background: linear-gradient(45deg, #ffcc00, #ff6600);
+            border: none;
+            border-radius: 10px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px #ffcc00;
+        }
+
+        /* RIGHT SIDE */
+        .right {
+            width: 40%;
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+        }
+
+        .feature {
+            margin-bottom: 20px;
+        }
+
+        .feature h3 {
+            margin: 0;
+            color: #ffcc00;
+        }
+
+        .feature p {
+            color: #ccc;
+            font-size: 14px;
+            }
+            .input-box {
+        margin-top: 15px;
+        }
+
+        .input-box label {
+            display: block;
+            font-size: 14px;
+            color: #aaa;
+            margin-bottom: 6px;
+        }
+
+        .input-box input {
+            width: 100%;
+            padding: 12px;
+            border-radius: 10px;
+            border: none;
+            outline: none;
+            font-size: 14px;
+            background: #111;
+            color: #0f0;
+            font-family: monospace;
+            box-shadow: inset 0 0 8px rgba(0,255,0,0.2);
+        }
+
+        .input-box input:focus {
+            box-shadow: 0 0 12px #00ffcc;
+        }
+    </style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- LEFT PANEL -->
+    <div class="left">
+        <div class="title">🚀 Hinglish Compiler</div>
+        <div class="subtitle">Write Hinglish → Get Python instantly</div>
+
+        <form action="/result" method="POST">
+            <textarea name="code" id="codeBox" oninput="autoResize(this)" placeholder="Type Hinglish code here...">{{ hinglish_code or "" }}</textarea>
+        <div class="input-box">
+            <label>🔤 Input Values (if using input())</label>
+            <input 
+                type="text" 
+                name="user_input" 
+                placeholder="e.g. Rahul or 10,20">
+        </div>
+            <br>
+            <button class="btn">⚡ Compile Code</button>
+        </form>
+    </div>
+
+    <!-- RIGHT PANEL -->
+    <div class="right">
+
+        <div class="feature">
+            <h3>⚡ Fast Conversion</h3>
+            <p>Instant Hinglish to Python transpilation</p>
+        </div>
+
+        <div class="feature">
+            <h3>🧠 Smart Errors</h3>
+            <p>Detects mistakes and suggests corrections</p>
+        </div>
+
+        <div class="feature">
+            <h3>💻 Beginner Friendly</h3>
+            <p>Helps new coders understand syntax easily</p>
+        </div>
+
+        <div class="feature">
+            <h3>🔍 Live Execution</h3>
+            <p>Run your converted code instantly</p>
+        </div>
+
+    </div>
+
+</div>
+    <script>
+        function autoResize(textarea) {
+            textarea.style.height = "auto";
+            textarea.style.height = textarea.scrollHeight + "px";
+        }
+        window.onload = function() {
+            autoResize(document.getElementById("codeBox"));
+        }
+</script>
+
+</body>
+</html>
